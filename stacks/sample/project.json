@@ -1,0 +1,10 @@
+{
+  "name": "sample",
+  "projectType": "application",
+  "tags": ["stack"],
+  "targets": {
+    "test": {},
+    "test:integration": {},
+    "start": {}
+  }
+}

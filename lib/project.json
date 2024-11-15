@@ -1,0 +1,7 @@
+{
+  "name": "lib",
+  "projectType": "library",
+  "targets": {
+    "test": {}
+  }
+}

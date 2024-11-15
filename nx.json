@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "test": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "command": "jest --testPathPattern '{projectRoot}' -t '^((?!integration).)*$' --collectCoverage --collectCoverageFrom '{projectRoot}/**/*.ts' --coverageDirectory 'coverage/{projectRoot}'"
+      }
+    },
+    "test:integration": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "jest --testPathPattern '{projectRoot}' -t '^.*integration.*$' --detectOpenHandles"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -r @swc-node/register -r tsconfig-paths/register -r source-map-support/register --no-warnings start.ts '{projectRoot}'"
+      }
+    }
+  }
+}
